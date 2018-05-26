@@ -1,6 +1,7 @@
 # Licensed under a 3-clause BSD style license - see LICENSE.rst
 # cython: profile=True, boundscheck=False, nonecheck=False, wraparound=False
-# cython: cdivision=True
+# cython: cdivision=True, linetrace=True
+# distutils: define_macros=CYTHON_TRACE=1
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 """
@@ -317,7 +318,7 @@ def sepmedfilt3(np.ndarray[np.float32_t, ndim=2, mode='c', cast=True] dsep3):
     -----
     The separable median medians the rows followed by the columns instead of
     using a square window. Therefore it is not identical to the full median
-    filter but it is approximatly the same, but it is signifcantly faster.
+    filter but it is approximately the same, but it is significantly faster.
     The median filter is not calculated for a 1 pixel border around the image.
     These pixel values are copied from the input data. The array needs to be
     C-contiguous order. Wrapper for PySepMedFilt3 in medutils.
@@ -354,7 +355,7 @@ def sepmedfilt5(np.ndarray[np.float32_t, ndim=2, mode='c', cast=True] dsep5):
     -----
     The separable median medians the rows followed by the columns instead of
     using a square window. Therefore it is not identical to the full median
-    filter but it is approximatly the same, but it is signifcantly faster.
+    filter but it is approximately the same, but it is significantly faster.
     The median filter is not calculated for a 2 pixel border around the image.
     These pixel values are copied from the input data. The array needs to be
     C-contiguous order. Wrapper for PySepMedFilt5 in medutils.
@@ -392,7 +393,7 @@ def sepmedfilt7(np.ndarray[np.float32_t, ndim=2, mode='c', cast=True] dsep7):
     -----
     The separable median medians the rows followed by the columns instead of
     using a square window. Therefore it is not identical to the full median
-    filter but it is approximatly the same, but it is signifcantly faster.
+    filter but it is approximately the same, but it is significantly faster.
     The median filter is not calculated for a 3 pixel border around the image.
     These pixel values are copied from the input data. The array needs to be
     C-contiguous order. Wrapper for PySepMedFilt7 in medutils.
@@ -429,7 +430,7 @@ def sepmedfilt9(np.ndarray[np.float32_t, ndim=2, mode='c', cast=True] dsep9):
     -----
     The separable median medians the rows followed by the columns instead of
     using a square window. Therefore it is not identical to the full median
-    filter but it is approximatly the same, but it is signifcantly faster.
+    filter but it is approximately the same, but it is significantly faster.
     The median filter is not calculated for a 4 pixel border around the image.
     These pixel values are copied from the input data. The array needs to be
     C-contiguous order. Wrapper for PySepMedFilt9 in medutils.

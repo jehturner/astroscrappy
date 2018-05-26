@@ -1,6 +1,7 @@
 # Licensed under a 3-clause BSD style license - see LICENSE.rst
 # cython: profile=True, boundscheck=False, nonecheck=False, wraparound=False
-# cython: cdivision=True
+# cython: cdivision=True, cython: linetrace=True
+# distutils: define_macros=CYTHON_TRACE=1
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 """
@@ -719,7 +720,7 @@ def gausskernel(float psffwhm, int kernsize):
 
 def gaussxkernel(float psffwhm, int kernsize):
     """gaussxkernel(psffwhm, kernsize)\n
-    Calculate a Guassian kernel in the x-direction.
+    Calculate a Gaussian kernel in the x-direction.
 
     This can be used for spectroscopic data.
 
@@ -750,7 +751,7 @@ def gaussxkernel(float psffwhm, int kernsize):
 
 def gaussykernel(float psffwhm, int kernsize):
     """gaussykernel(psffwhm, kernsize)\n
-    Calculate a Guassian kernel in the y-direction.
+    Calculate a Gaussian kernel in the y-direction.
 
     This can be used for spectroscopic data.
 
